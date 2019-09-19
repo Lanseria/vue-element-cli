@@ -1,5 +1,11 @@
 {
-  "name": "vue-some",
+  "repository": {
+    "name": "VEC 0.1.0",
+    "team": "LimonPlayer",
+    "changelogurl": "https://github.com:Lanseria/vue-element-cli",
+    "description": "中台脚手架"
+  },
+  "name": "vec",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -17,6 +23,7 @@
     "nprogress": "^0.2.0",
     "qs": "^6.8.0",
     "register-service-worker": "^1.6.2",
+    "typescript": "^3.6.3",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"

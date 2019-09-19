@@ -1,0 +1,85 @@
+{
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true,
+    "suppressUpdateNotice": true
+  },
+  "editor.mouseWheelZoom": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.snippetSuggestions": "top",
+  "editor.fontSize": 16,
+  "editor.tabSize": 2,
+  "editor.autoIndent": true,
+  "editor.insertSpaces": true,
+  "editor.wordWrap": "on",
+  "files.autoSaveDelay": 1000,
+  "editor.formatOnSave": true,
+  "extensions.ignoreRecommendations": false,
+  "files.autoSave": "onFocusChange",
+  "files.associations": {
+    "*.wxc": "vue",
+    "*.wxp": "vue",
+    "*.wxa": "vue",
+    "*.env.mock": "dotenv",
+    "*.env.mock.local": "dotenv"
+  },
+  "files.eol": "auto",
+  "git.autofetch": true,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true, //让函数(名)和后面的括号之间加个空格
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "terminal.integrated.env.windows": {
+    "LC_ALL": "en_US.UTF-8"
+  },
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": true, //让函数(名)和后面的括号之间加个空格
+  "typescript.locale": "zh-CN",
+  "todohighlight.include": [
+    "**/*.js",
+    "**/*.vue",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.html",
+    "**/*.php",
+    "**/*.css",
+    "**/*.scss"
+  ],
+  "todohighlight.exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/disp_static/**",
+    "**/bower_components/**",
+    "**/build/**",
+    "**/.vscode/**",
+    "**/.github/**",
+    "**/_output/**",
+    "**/*.min.*",
+    "**/*.map"
+  ],
+  "workbench.editor.tabSizing": "shrink",
+  "window.zoomLevel": 0,
+  "eslint.autoFixOnSave": true, // 每次保存的时候将代码按eslint格式进行修复
+  "prettier.semi": false, //去掉代码结尾的分号
+  "prettier.singleQuote": true, //使用单引号替代双引号
+  "vetur.format.defaultFormatter.html": "js-beautify-html", //格式化.vue中html
+  "vetur.format.defaultFormatter.js": "vscode-typescript", //让vue中的js按编辑器自带的ts格式进行格式化
+  "vetur.format.defaultFormatterOptions": {
+    "js-beautify-html": {
+      "wrap_line_length": 0,
+      "wrap_attributes": "auto",
+      "end_with_newline": false
+    }
+  },
+  "eslint.validate": [
+    //开启对.vue文件中错误的检查
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "html",
+      "autoFix": true
+    },
+    {
+      "language": "vue",
+      "autoFix": true
+    }
+  ]
+}
