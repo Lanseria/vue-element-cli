@@ -6,11 +6,11 @@ NProgress.configure({ showSpinner: false })
 
 router.beforeEach(async (to, from, next) => {
   const {
-    accessToken,
+    access_token,
   } = store.getters
   NProgress.start()
   const meta = to.meta || {}
-  if (accessToken) {
+  if (access_token) {
     if (to.path === '/login') {
       next('/')
     } else {
@@ -20,7 +20,7 @@ router.beforeEach(async (to, from, next) => {
     if (meta.isAuth === false) {
       next()
     } else {
-      next(`/login?redirect=${to.path}`)
+      next(`/login?redirect=${to.fullPath}`)
     }
   }
 })
