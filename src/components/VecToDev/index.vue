@@ -7,9 +7,9 @@ export default {
   name: 'VecToDev',
   data () {
     return {
-      fackerImg
+      fackerImg,
     }
-  }
+  },
 }
 </script>
 <style scoped>

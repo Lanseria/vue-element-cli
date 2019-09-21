@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 
 const createRouter = () => new VueRouter({
   mode: 'history',
-  routes: []
+  routes: [],
 })
 
 let Router = createRouter()
@@ -15,7 +15,7 @@ export function initRouter (router) {
   // AvueRouter.install(router, store)
   // router.$avueRouter.formatRoutes(store.state.menu.menu, true)
   router.addRoutes([
-    ...pageRouter
+    ...pageRouter,
   ])
 }
 

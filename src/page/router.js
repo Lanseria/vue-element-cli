@@ -6,7 +6,7 @@ export default [
   {
     path: '/',
     name: '主页',
-    redirect: '/index'
+    redirect: '/index',
   },
   {
     path: '/login',
@@ -15,8 +15,8 @@ export default [
     meta: {
       keepAlive: false,
       isTab: false,
-      isAuth: false
-    }
+      isAuth: false,
+    },
   },
   {
     path: '/register',
@@ -25,7 +25,7 @@ export default [
     meta: {
       keepAlive: false,
       isTab: false,
-      isAuth: false
-    }
-  }
+      isAuth: false,
+    },
+  },
 ]

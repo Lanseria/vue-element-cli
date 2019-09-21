@@ -6,7 +6,7 @@ NProgress.configure({ showSpinner: false })
 
 router.beforeEach(async (to, from, next) => {
   const {
-    accessToken
+    accessToken,
   } = store.getters
   NProgress.start()
   const meta = to.meta || {}
@@ -25,6 +25,6 @@ router.beforeEach(async (to, from, next) => {
   }
 })
 
-router.afterEach((to) => {
+router.afterEach(() => {
   NProgress.done()
 })
