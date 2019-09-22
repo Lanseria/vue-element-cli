@@ -7,3 +7,11 @@ export const postLogin = (data) => {
     data: data,
   })
 }
+
+export const postRegister = (data) => {
+  return request({
+    url: '/auth/register',
+    method: 'post',
+    data: data,
+  })
+}

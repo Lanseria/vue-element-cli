@@ -9,6 +9,7 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" :loading="submitFormLoading" @click="mixinsSubmitFormGen">登陆</el-button>
+        <el-button @click="$openPage('/register')">注册</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -41,7 +42,7 @@ export default {
     async submitForm () {
       const data = await this.userLogin(this.form)
       if (data.code) {
-        console.log('错误')
+        this.$message(data.msg)
       } else {
         if (this.$route.query.redirect) {
           this.$openPage(this.$route.query.redirect)

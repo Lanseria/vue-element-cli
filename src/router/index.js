@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import pageRouter from '@/page/router'
+import indexRouter from '@/page/index/router'
 
 Vue.use(VueRouter)
 
@@ -12,9 +13,8 @@ const createRouter = () => new VueRouter({
 let Router = createRouter()
 
 export function initRouter (router) {
-  // AvueRouter.install(router, store)
-  // router.$avueRouter.formatRoutes(store.state.menu.menu, true)
   router.addRoutes([
+    ...indexRouter,
     ...pageRouter,
   ])
 }
