@@ -12,21 +12,10 @@ const externals = {
   'element-ui': 'ELEMENT',
 }
 const commonCss = [
-  '/cdn/animate/animate.css',
-  '/cdn/iconfont/index.css',
   '/cdn/iep/index.css',
-  '/cdn/avue.index.css',
   '/cdn/element-ui.css',
-  '/cdn/froala-editor/css/froala_editor.pkgd.min.css',
-  '/cdn/froala-editor/css/froala_style.min.css',
-  '/cdn/froala-editor/css/themes/gray.min.css',
-  '//at.alicdn.com/t/font_1036949_zadgid1gfz.css',
 ]
 const commonJs = [
-  '/cdn/jquery.min.js',
-  '/cdn/froala-editor/froala_editor.pkgd.min.js',
-  '/cdn/froala-editor/zh_cn.js',
-  '//at.alicdn.com/t/font_1184303_mhqvids4u2k.js',
 ]
 // CDN外链，会插入到index.html中
 const cdn = {
