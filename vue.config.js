@@ -125,14 +125,6 @@ module.exports = {
     // 开启 CSS source maps?
     // sourceMap: false,
     loaderOptions: {
-      less: {
-        modifyVars: {
-          'primary-color': '#BA1B21',
-          // 'link-color': '#1DA57A',
-          // 'border-radius-base': '2px',
-        },
-        javascriptEnabled: true,
-      },
       // pass options to sass-loader
       sass: {
         // 引入全局变量样式,@使我们设置的别名,执行src目录
@@ -158,8 +150,8 @@ module.exports = {
     },
   },
   pwa: {
-    name: 'iep-2.0',
-    themeColor: '#BA1B21',
+    name: 'vec-1.0',
+    themeColor: '#409EFF',
     msTileColor: '#000000',
     appleMobileWebAppCapable: 'yes',
     appleMobileWebAppStatusBarStyle: 'black',
