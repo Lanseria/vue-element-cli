@@ -1,21 +1,30 @@
 <template>
   <el-container>
-    <el-aside width="200px">
-      <el-menu :default-openeds="['1']">
-        <el-submenu index="1">
-          <template slot="title"><i class="el-icon-setting"></i>系统设置</template>
-          <el-menu-item index="1-1">用户管理</el-menu-item>
-          <el-menu-item index="1-2">菜单管理</el-menu-item>
-        </el-submenu>
-      </el-menu>
-    </el-aside>
-    <el-container>
-      <el-header>
-      </el-header>
-
+    <vec-aside></vec-aside>
+    <section class="container">
+      <vec-header></vec-header>
       <el-main>
         <router-view />
       </el-main>
-    </el-container>
+      <vec-footer></vec-footer>
+    </section>
   </el-container>
 </template>
+<script>
+import VecAside from './Components/Aside/index'
+import VecHeader from './Components/Header/index'
+import VecFooter from './Components/Footer/index'
+export default {
+  components: {
+    VecAside,
+    VecHeader,
+    VecFooter,
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+.container {
+  width: 100%;
+}
+</style>
