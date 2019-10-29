@@ -1,10 +1,4 @@
 {
-  "repository": {
-    "name": "VEC 0.1.0",
-    "team": "LimonPlayer",
-    "changelogurl": "https://github.com:Lanseria/vue-element-cli",
-    "description": "中台脚手架"
-  },
   "name": "vec",
   "version": "0.1.0",
   "private": true,
@@ -16,7 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
-    "core-js": "^2.6.5",
+    "core-js": "^3.3.2",
     "element-ui": "^2.12.0",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
@@ -31,10 +25,10 @@
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
-    "@vue/cli-plugin-babel": "^3.11.0",
-    "@vue/cli-plugin-eslint": "^3.11.0",
-    "@vue/cli-plugin-pwa": "^3.11.0",
-    "@vue/cli-service": "^3.11.0",
+    "@vue/cli-plugin-babel": "^4.0.5",
+    "@vue/cli-plugin-eslint": "^4.0.5",
+    "@vue/cli-plugin-pwa": "^4.0.5",
+    "@vue/cli-service": "^4.0.5",
     "@vue/eslint-config-prettier": "^5.0.0",
     "babel-eslint": "^10.0.1",
     "commitizen": "^4.0.3",
@@ -46,18 +40,8 @@
     "husky": "^3.0.5",
     "prettier": "^1.18.2",
     "sass": "^1.18.0",
-    "sass-loader": "^7.1.0",
+    "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.10"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "eslintConfig": {
     "root": true,
@@ -116,5 +100,21 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "repository": {
+    "name": "VEC 0.1.0",
+    "team": "LimonPlayer",
+    "changelogurl": "https://github.com:Lanseria/vue-element-cli",
+    "description": "中台脚手架"
+  }
 }
