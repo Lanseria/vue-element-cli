@@ -1,6 +1,6 @@
 <template>
   <header class="layout-header">
-    <div class="global-header-trigger">
+    <div class="global-header-trigger" @click="handleToggle">
       <i class="el-icon-s-fold"></i>
     </div>
     <div></div>
@@ -9,11 +9,17 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
-  data () {
+  data() {
     return {
 
     }
+  },
+  methods: {
+    ...mapMutations({
+      handleToggle: 'SET_SIDERBAR_COLLAPSED',
+    }),
   },
 }
 </script>
@@ -24,7 +30,7 @@ export default {
   justify-content: space-between;
   height: 64px;
   width: 100%;
-  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  box-shadow: 0 1px 4px rgba(87, 87, 87, 0.08);
 }
 .global-header-trigger {
   padding: 19px 24px;
