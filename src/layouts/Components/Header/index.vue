@@ -1,20 +1,24 @@
 <template>
   <header class="layout-header">
     <div class="global-header-trigger" @click="handleToggle">
-      <i class="el-icon-s-fold"></i>
+      <i :class="siderbar_collapsed?'el-icon-s-unfold':'el-icon-s-fold'"></i>
     </div>
-    <div></div>
-    <!-- <i class="el-icon-s-unfold"></i> -->
+    <div>
+
+    </div>
   </header>
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 export default {
   data() {
     return {
 
     }
+  },
+  computed: {
+    ...mapGetters(['siderbar_collapsed']),
   },
   methods: {
     ...mapMutations({
@@ -26,6 +30,7 @@ export default {
 
 <style lang="scss" scoped>
 .layout-header {
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
   height: 64px;

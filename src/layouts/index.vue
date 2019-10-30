@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <vec-aside></vec-aside>
-    <section class="container">
+    <section class="container" :style="`width: ${containerWidth}`">
       <vec-header></vec-header>
       <el-main>
         <router-view />
@@ -11,6 +11,7 @@
   </el-container>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 import VecAside from './Components/Aside/index'
 import VecHeader from './Components/Header/index'
 import VecFooter from './Components/Footer/index'
@@ -20,11 +21,17 @@ export default {
     VecHeader,
     VecFooter,
   },
+  computed: {
+    ...mapGetters(['siderbar_collapsed']),
+    containerWidth() {
+      return this.siderbar_collapsed ? 'calc(100vw - 64px)' : 'calc(100vw - 200px)'
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .container {
-  width: 100%;
+  background-color: #eee;
 }
 </style>
