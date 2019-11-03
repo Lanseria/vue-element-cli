@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import pageRouter from '@/page/router'
 import indexRouter from '@/page/index/router'
+import SystemSettingRouter from '@/page/SystemSetting/router'
 
 Vue.use(VueRouter)
 
@@ -16,6 +17,7 @@ export function initRouter (router) {
   router.addRoutes([
     ...indexRouter,
     ...pageRouter,
+    ...SystemSettingRouter,
   ])
 }
 

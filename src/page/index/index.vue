@@ -1,4 +1,4 @@
- <template>
+<template>
   <el-table :data="tableData">
     <el-table-column prop="date" label="日期" width="180">
     </el-table-column>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       tableData: [{
         date: '2016-05-02',

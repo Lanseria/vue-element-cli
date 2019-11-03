@@ -1,19 +1,24 @@
 <template>
   <el-aside class="menu-sider" :width="asiderWidth">
     <div class="menu-logo">
-      <el-link v-if="siderbar_collapsed" href="https://element.eleme.io" target="_blank">V</el-link>
-      <el-link v-else href="https://element.eleme.io" target="_blank">Vec Pro 中台系统</el-link>
+      <el-link v-if="siderbar_collapsed" @click="$openPage('/')">V</el-link>
+      <el-link v-else @click="$openPage('/')">Vec Pro 中台系统</el-link>
     </div>
-    <el-menu default-active="1-1" :collapse="siderbar_collapsed">
-      <el-submenu index="1">
+    <el-menu :default-active="currentPath" :collapse="siderbar_collapsed" router>
+      <el-menu-item index="/index/index">
+        <i class="el-icon-menu"></i>
+        <span slot="title">
+          工作台
+        </span>
+      </el-menu-item>
+      <el-submenu :index="item.path" v-for="item in menuList" :key="item.id">
         <template slot="title">
-          <i class="el-icon-setting"></i>
-          <span slot="title">系统设置</span>
+          <i :class="item.icon"></i>
+          <span slot="title">{{item.name}}</span>
         </template>
         <el-menu-item-group>
-          <span slot="title">系统设置</span>
-          <el-menu-item index="1-1">用户管理</el-menu-item>
-          <el-menu-item index="1-2">菜单管理</el-menu-item>
+          <span slot="title">{{item.name}}</span>
+          <el-menu-item :index="sitem.path" v-for="sitem in item.children" :key="sitem.id" @click="$openPage(`${item.path}/${sitem.path}`)">{{sitem.name}}</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
     </el-menu>
@@ -21,12 +26,22 @@
 </template>
 
 <script>
+import { menuData } from '@/page/SystemSetting/config'
+import { transToMenu } from '@/utils/Menu'
 import { mapGetters } from 'vuex'
 export default {
+  data () {
+    return {
+      menuList: transToMenu(menuData),
+    }
+  },
   computed: {
     ...mapGetters(['siderbar_collapsed']),
-    asiderWidth() {
+    asiderWidth () {
       return this.siderbar_collapsed ? '64px' : '200px'
+    },
+    currentPath () {
+      return this.$route.path
     },
   },
 }
@@ -47,5 +62,8 @@ export default {
 }
 .menu-sider ::v-deep .el-menu {
   border-right: none;
+}
+.menu-sider ::v-deep .el-menu-item-group__title {
+  display: none;
 }
 </style>
