@@ -1,4 +1,6 @@
 // import Layout from '@/layouts/'
 import { menuData } from './config'
 import { transToRouter } from '@/utils/Menu'
-export default transToRouter(menuData, true)
+const data = transToRouter(menuData, true)
+console.log(data)
+export default data

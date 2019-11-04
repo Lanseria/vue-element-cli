@@ -26,21 +26,21 @@
 </template>
 
 <script>
-import { menuData } from '@/page/SystemSetting/config'
+import { menuData } from '@/views/SystemSetting/config'
 import { transToMenu } from '@/utils/Menu'
 import { mapGetters } from 'vuex'
 export default {
-  data () {
+  data() {
     return {
       menuList: transToMenu(menuData),
     }
   },
   computed: {
     ...mapGetters(['siderbar_collapsed']),
-    asiderWidth () {
+    asiderWidth() {
       return this.siderbar_collapsed ? '64px' : '200px'
     },
-    currentPath () {
+    currentPath() {
       return this.$route.path
     },
   },

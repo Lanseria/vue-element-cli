@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import pageRouter from '@/page/router'
 import indexRouter from '@/page/index/router'
-import SystemSettingRouter from '@/page/SystemSetting/router'
+import SystemSettingRouter from '@/views/SystemSetting/router'
 
 Vue.use(VueRouter)
 
@@ -13,7 +13,7 @@ const createRouter = () => new VueRouter({
 
 let Router = createRouter()
 
-export function initRouter (router) {
+export function initRouter(router) {
   router.addRoutes([
     ...indexRouter,
     ...pageRouter,
@@ -23,7 +23,7 @@ export function initRouter (router) {
 
 initRouter(Router)
 
-export function resetRouter () {
+export function resetRouter() {
   const newRouter = createRouter()
   initRouter(newRouter)
   Router.matcher = newRouter.matcher

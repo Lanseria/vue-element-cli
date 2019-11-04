@@ -10,7 +10,7 @@ const transToRouter = (menuList, first = false) => {
     const aMenu = menuList[i]
     const isChild = aMenu.children.length !== 0
 
-    console.log(isChild, first)
+    // console.log(isChild, first)
 
     // menu 各个属性
     const path = (() => {
@@ -26,7 +26,7 @@ const transToRouter = (menuList, first = false) => {
       } else if (isChild && !first) {
         return '@/layouts/blank'
       } else {
-        return `${aMenu.component}`
+        return `@/views/${aMenu.component}`
       }
     })()
     const component = (resolve) => {
@@ -45,8 +45,8 @@ const transToRouter = (menuList, first = false) => {
         if (first) {
           return [
             {
-              component (resolve) {
-                require([`${aMenu.component}`], resolve)
+              component: (resolve) => {
+                require([`${_componentName}`], resolve)
               },
               icon: icon,
               name: name,
