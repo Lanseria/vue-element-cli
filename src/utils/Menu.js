@@ -22,14 +22,14 @@ const transToRouter = (menuList, first = false) => {
     })()
     const _componentName = (() => {
       if (first) {
-        return '../layouts/index.vue'
+        return 'layouts/index'
       } else if (isChild && !first) {
-        return '../layouts/blank.vue'
+        return 'layouts/blank'
       } else {
-        return `../views/${aMenu.component}.vue`
+        return `views/${aMenu.component}`
       }
     })()
-    const component = () => import(`${_componentName}`)
+    const component = () => import(`@/${_componentName}.vue`)
     const name = aMenu.name
     const icon = aMenu.icon
     const redirect = (() => {

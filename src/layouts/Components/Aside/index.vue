@@ -5,7 +5,7 @@
       <el-link v-else @click="$openPage('/')">Vec Pro 中台系统</el-link>
     </div>
     <el-menu :default-active="currentPath" :collapse="siderbar_collapsed">
-      <el-menu-item index="/index/index">
+      <el-menu-item index="/index/index" @click="$openPage('/index/index')">
         <i class="el-icon-menu"></i>
         <span slot="title">
           工作台
@@ -18,7 +18,7 @@
         </template>
         <el-menu-item-group>
           <span slot="title">{{item.name}}</span>
-          <el-menu-item :index="sitem.path" v-for="sitem in item.children" :key="sitem.id" @click="$openPage(`${item.path}/${sitem.path}`)">{{sitem.name}}</el-menu-item>
+          <el-menu-item :index="`${item.path}/${sitem.path}`" v-for="sitem in item.children" :key="sitem.id" @click="$openPage(`${item.path}/${sitem.path}`)">{{sitem.name}}</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
     </el-menu>
@@ -30,17 +30,17 @@ import { menuData } from '@/views/SystemSetting/config'
 import { transToMenu } from '@/utils/Menu'
 import { mapGetters } from 'vuex'
 export default {
-  data() {
+  data () {
     return {
       menuList: transToMenu(menuData),
     }
   },
   computed: {
     ...mapGetters(['siderbar_collapsed']),
-    asiderWidth() {
+    asiderWidth () {
       return this.siderbar_collapsed ? '64px' : '200px'
     },
-    currentPath() {
+    currentPath () {
       return this.$route.path
     },
   },

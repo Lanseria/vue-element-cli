@@ -3,8 +3,7 @@
  * @param {String} value URL 路径
  * @param {String} type 路径类型
  */
-export function openPage(value, type = 'path') {
-  console.log(value)
+export function openPage (value, type = 'path') {
   if (type === 'path') {
     if (value.includes('http') || value.includes('https')) {
       window.location.href = value
