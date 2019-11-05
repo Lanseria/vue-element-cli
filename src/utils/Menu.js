@@ -22,16 +22,14 @@ const transToRouter = (menuList, first = false) => {
     })()
     const _componentName = (() => {
       if (first) {
-        return '@/layouts/index'
+        return '../layouts/index.vue'
       } else if (isChild && !first) {
-        return '@/layouts/blank'
+        return '../layouts/blank.vue'
       } else {
-        return `@/views/${aMenu.component}`
+        return `../views/${aMenu.component}.vue`
       }
     })()
-    const component = (resolve) => {
-      require([`${_componentName}`], resolve)
-    }
+    const component = () => import(`${_componentName}`)
     const name = aMenu.name
     const icon = aMenu.icon
     const redirect = (() => {
@@ -45,9 +43,7 @@ const transToRouter = (menuList, first = false) => {
         if (first) {
           return [
             {
-              component: (resolve) => {
-                require([`${_componentName}`], resolve)
-              },
+              component: () => import(`${_componentName}`),
               icon: icon,
               name: name,
               path: 'index',

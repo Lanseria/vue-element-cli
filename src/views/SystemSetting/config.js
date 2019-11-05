@@ -11,7 +11,7 @@ export const menuData = [
         name: '用户管理',
         path: 'user',
         icon: 'el-icon-menu',
-        component: 'SystemSetting/User/index.vue',
+        component: 'SystemSetting/User/index',
         children: [],
       },
       {
@@ -19,7 +19,7 @@ export const menuData = [
         name: '菜单管理',
         path: 'menu',
         icon: 'el-icon-menu',
-        component: 'SystemSetting/Menu/index.vue',
+        component: 'SystemSetting/Menu/index',
         children: [],
       },
     ],

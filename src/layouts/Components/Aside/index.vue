@@ -4,7 +4,7 @@
       <el-link v-if="siderbar_collapsed" @click="$openPage('/')">V</el-link>
       <el-link v-else @click="$openPage('/')">Vec Pro 中台系统</el-link>
     </div>
-    <el-menu :default-active="currentPath" :collapse="siderbar_collapsed" router>
+    <el-menu :default-active="currentPath" :collapse="siderbar_collapsed">
       <el-menu-item index="/index/index">
         <i class="el-icon-menu"></i>
         <span slot="title">
