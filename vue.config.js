@@ -120,22 +120,15 @@ module.exports = {
   // 生产环境是否生成 sourceMap 文件
   productionSourceMap: false,
   css: {
-    // 是否使用css分离插件 ExtractTextPlugin
-    // extract: true,
-    // 开启 CSS source maps?
-    // sourceMap: false,
     loaderOptions: {
       // pass options to sass-loader
       sass: {
         // 引入全局变量样式,@使我们设置的别名,执行src目录
-        // data: `
-        //     @import "@/styles/approval.scss";
-        //     @import "@/styles/variables.scss";
-        // `,
+        prependData: `
+            @import "@/styles/variables.scss";
+        `,
       },
     },
-    // 启用 CSS modules for all css / pre-processor files.
-    // modules: false,
   },
   // 配置转发代理
   devServer: {
@@ -151,8 +144,8 @@ module.exports = {
   },
   pwa: {
     name: 'vec-1.0',
-    themeColor: '#409EFF',
-    msTileColor: '#000000',
+    themeColor: '#008080',
+    msTileColor: '#008080',
     appleMobileWebAppCapable: 'yes',
     appleMobileWebAppStatusBarStyle: 'black',
     workboxOptions: {

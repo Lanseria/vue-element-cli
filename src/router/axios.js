@@ -25,6 +25,7 @@ axios.interceptors.request.use(
     NProgress.start() // start progress bar
     const isToken = (config.headers || {}).isToken === false
     let token = store.getters.access_token
+    console.log(token)
     if (token && !isToken) {
       config.headers['Authorization'] = 'Bearer ' + token // token
     }

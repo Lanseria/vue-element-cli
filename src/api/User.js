@@ -15,3 +15,10 @@ export const postRegister = (data) => {
     data: data,
   })
 }
+
+export const getUserInfo = () => {
+  return request({
+    url: '/users/info',
+    method: 'get',
+  })
+}

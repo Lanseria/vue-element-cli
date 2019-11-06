@@ -42,5 +42,9 @@ export default {
   font-size: 20px;
   cursor: pointer;
   transition: all 0.3s, padding 0s;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.025);
+    color: $--color-primary;
+  }
 }
 </style>
