@@ -9,7 +9,9 @@ NProgress.configure({ showSpinner: false })
 router.beforeEach(async (to, from, next) => {
   NProgress.start()
   const meta = to.meta || {}
-  if (Vue.ls.get(types.SET_ACCESS_TOKEN)) {
+  const access_token = Vue.ls.get(types.SET_ACCESS_TOKEN)
+  // console.log(meta, access_token)
+  if (access_token) {
     if (to.path === '/login') {
       next('/')
     } else {

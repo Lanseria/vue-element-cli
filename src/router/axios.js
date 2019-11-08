@@ -25,7 +25,7 @@ axios.interceptors.request.use(
     NProgress.start() // start progress bar
     const isToken = (config.headers || {}).isToken === false
     let token = store.getters.access_token
-    console.log(token)
+    // console.log(token)
     if (token && !isToken) {
       config.headers['Authorization'] = 'Bearer ' + token // token
     }
@@ -41,10 +41,11 @@ axios.interceptors.response.use(res => {
   NProgress.done()
   const status = Number(res.status) || 200
   const message = res.data.msg
-  if (status === 401 || res.data.code === 401) {
-    store.dispatch('FedLogOut').then(() => {
+  // console.log(res, status, message)
+  if (status === 401) {
+    store.dispatch('userLogout').then(() => {
       router.push({ path: '/login' })
-    })
+    }).catch(err => console.log(err))
     return
   } else if (status === 403 || res.data.code === 403) {
     router.push({ path: '/403' })
@@ -54,11 +55,11 @@ axios.interceptors.response.use(res => {
       Message(message)
     }
     if (res.data.code === 1 && (/[2|5]\d\d/.test('' + status))) {
-      return res
+      return res.data
     }
     return Promise.reject(new Error(message))
   } else {
-    return res
+    return res.data
   }
 
 },

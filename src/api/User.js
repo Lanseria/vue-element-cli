@@ -22,3 +22,10 @@ export const getUserInfo = () => {
     method: 'get',
   })
 }
+
+export const getUserList = () => {
+  return request({
+    url: '/users/',
+    method: 'get',
+  })
+}
