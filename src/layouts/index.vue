@@ -23,7 +23,7 @@ export default {
   },
   computed: {
     ...mapGetters(['siderbar_collapsed']),
-    containerWidth() {
+    containerWidth () {
       return this.siderbar_collapsed ? 'calc(100vw - 64px)' : 'calc(100vw - 200px)'
     },
   },
@@ -33,5 +33,11 @@ export default {
 <style lang="scss" scoped>
 .container {
   background-color: #eee;
+}
+.container ::v-deep {
+  .el-main {
+    margin: 20px;
+    background-color: #fff;
+  }
 }
 </style>
