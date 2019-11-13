@@ -22,6 +22,14 @@ export const menuData = [
         component: 'SystemSetting/Menu/index',
         children: [],
       },
+      {
+        id: 4, //id唯一ID标识符
+        name: '权限管理',
+        path: 'role',
+        icon: '',
+        component: 'SystemSetting/Role/index',
+        children: [],
+      },
     ],
   },
 ]
