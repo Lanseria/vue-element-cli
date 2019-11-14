@@ -24,7 +24,6 @@ export default {
   methods: {
     async loadPage () {
       const data = await getUserList()
-      console.log(data)
       this.userList = data.data
     },
   },

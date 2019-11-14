@@ -42,6 +42,8 @@
   "typescript.locale": "zh-CN",
   "vetur.format.defaultFormatter.html": "js-beautify-html",
   "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
   "vetur.format.defaultFormatterOptions": {
     "js-beautify-html": {
       "end_with_newline": false,
