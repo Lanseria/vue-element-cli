@@ -29,6 +29,7 @@ import {
   postRole,
   patchRole,
   getRoleById,
+  deleteRoleById,
 } from '@/api/Role'
 export default {
   components: {
@@ -56,6 +57,16 @@ export default {
       this.$refs['DialogForm'].form = { ...data }
       this.$refs['DialogForm'].formRequestFn = patchRole
       this.$refs['DialogForm'].dialogShow = true
+    },
+    async handleDel (row) {
+      const data = await deleteRoleById(row.id)
+      console.log(data)
+      if (!data.code) {
+        this.$message('操作成功')
+        this.loadPage()
+      } else {
+        this.$message.warn(data.msg)
+      }
     },
   },
 }

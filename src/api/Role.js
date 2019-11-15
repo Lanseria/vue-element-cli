@@ -31,3 +31,10 @@ export const getRoleById = (id) => {
     method: 'get',
   })
 }
+
+export const deleteRoleById = (id) => {
+  return request({
+    url: `${prefix}/${id}`,
+    method: 'delete',
+  })
+}
