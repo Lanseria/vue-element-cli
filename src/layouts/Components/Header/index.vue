@@ -3,27 +3,47 @@
     <div class="global-header-trigger" @click="handleToggle">
       <i :class="siderbar_collapsed?'el-icon-s-unfold':'el-icon-s-fold'"></i>
     </div>
-    <div>
-
-    </div>
+    <el-dropdown class="global-header-trigger">
+      <span class="el-dropdown-link">
+        {{username}}<i class="el-icon-arrow-down el-icon--right"></i>
+      </span>
+      <el-dropdown-menu slot="dropdown">
+        <el-dropdown-item icon="el-icon-user" @click.native="handleCenter()">个人中心</el-dropdown-item>
+        <el-dropdown-item icon="el-icon-switch-button" @click.native="handleLogout()">退出</el-dropdown-item>
+      </el-dropdown-menu>
+    </el-dropdown>
   </header>
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex'
+import { mapGetters, mapMutations, mapActions } from 'vuex'
 export default {
-  data() {
+  data () {
     return {
 
     }
   },
   computed: {
-    ...mapGetters(['siderbar_collapsed']),
+    ...mapGetters([
+      'siderbar_collapsed',
+      'username',
+    ]),
   },
   methods: {
     ...mapMutations({
       handleToggle: 'SET_SIDERBAR_COLLAPSED',
     }),
+    ...mapActions([
+      'userLogout',
+    ]),
+    handleCenter () {
+      console.log('center')
+    },
+    handleLogout () {
+      console.log('logout')
+      this.userLogout()
+      this.$openPage('/login')
+    },
   },
 }
 </script>
